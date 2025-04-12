@@ -23,10 +23,10 @@ Codepen - muchas ideas y desarrollos
 	--header-height: 60px;
 
 	/* Colors */
-	--primary-color: light-dark(#111, #ffffffcc);
+	--primary-color: light-dark(#111, #c9c4c4cc);
 	--bg-color-section1: light-dark(#8dd9ff, #111);
 	--bg-color-section2: light-dark(#fafafa, #000000);
-	--bg-color-section3: light-dark(#000000, #ffffff);
+	--bg-color-section3: light-dark(#000000, #ffffffe8);
 	--bg-color-buttons: light-dark(#000000, #0022ff);
 
 	/* Typografy */
