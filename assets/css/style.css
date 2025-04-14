@@ -111,27 +111,24 @@ html {
 	justify-content: center;
 	align-items: center;
 }
-
 .btn {
 	display: inline-block;
-	padding: 1.5rem 4rem;
-	border: none;
-	outline: none;
-	border-radius: 5px;
+	padding: 0.75rem 1.5rem; /* COMPACTO como "Ver Demo" */
+	font-size: 1rem;
+	font-weight: var(--font-semi-bold);
+	border-radius: 1rem;
+	border: 2px solid #ffffff;
+	background-color: #000000;
+	color: #ffffff;
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
-	color: var(--bg-color-section2);
-	background-color: var(--primary-color);
-
-	&:hover {
-		translate: 0px -4px;
-		box-shadow: 0px 3px 20px #0400ff;
-	}
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
-.btn--primary {
-	color: var(--bg-color-section2);
-	background-color: var(--bg-color-section3);
+.btn:hover {
+	box-shadow: 1px 7px 15px rgb(0, 0, 255);
+	transform: translateY(-4px);
 }
 
 ::-webkit-scrollbar {
@@ -508,7 +505,8 @@ html {
 			}
 			.home__title {
 				margin: 0 auto;
-				margin-bottom: var(--mr-2);
+				margin-bottom: 0rem;
+
 				text-transform: uppercase;
 				border-right: 4px solid;
 				white-space: nowrap;
@@ -520,6 +518,8 @@ html {
 		}
 		.home__buttons {
 			text-align: center;
+			margin-top: 0;
+			padding-top: 0;
 		}
 	}
 }
@@ -580,9 +580,13 @@ html {
 
 				.skills__cards-container {
 					background-color: var(--primary-color);
+					/* background-color: #000000; */
 					height: 100px;
 					padding: 20px;
 					border-radius: 1rem;
+					border-style: solid;
+					border-color: #ffffff;
+					border-width: 2px;
 					text-align: center;
 					width: inherit;
 					transition: 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
@@ -705,14 +709,17 @@ html {
 
 		.contact__form {
 			width: 100%;
-			padding: 3rem 1.5rem 2rem;
+			padding: 0 1.5rem 0.5rem;
 			background-color: var(--bg-color-section2);
-			border-radius: 5px;
+			border-radius: 1rem;
+			border-style: solid;
+			border-color: #ffffff;
+			border-width: 2px;
 			margin: 0 auto;
 
 			.contact__form-container {
 				.contact__form-group {
-					margin-bottom: var(--mr-4);
+					margin-bottom: 0;
 
 					.contact__form-label {
 						display: block;
@@ -845,7 +852,7 @@ html {
 
 				.home__description {
 					font-size: 1.3rem;
-					padding: 0 30px;
+					padding: 0 20px;
 				}
 			}
 		}
@@ -858,9 +865,20 @@ html {
 
 				.about__card {
 					transition: transform 0.2s;
+					border-radius: 1rem;
+					border-style: solid;
+					border-color: #ffffff;
+					border-width: 2px;
 
 					&:nth-child(1) {
 						transform: rotate(-8deg);
+					}
+
+					.about__card--img {
+						border-radius: 1rem;
+						border-style: solid;
+						border-color: #ffffff;
+						border-width: 2px;
 					}
 
 					&:nth-child(3) {
