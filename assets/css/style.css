@@ -24,6 +24,7 @@ Codepen - muchas ideas y desarrollos
 
 	/* Colors */
 	--primary-color: light-dark(#111, #c9c4c4cc);
+	--secundary-color: light-dark(#ffffff, #ffffffa8);
 	--bg-color-section1: light-dark(#8dd9ff, #111);
 	--bg-color-section2: light-dark(#fafafa, #000000);
 	--bg-color-section3: light-dark(#000000, #ffffffe8);
@@ -114,7 +115,7 @@ html {
 .btn {
 	position: relative;
 	display: inline-block;
-	padding: 0.75rem 1.5rem; /* COMPACTO como "Ver Demo" */
+	padding: 0.75rem 1.5rem;
 	font-size: 1rem;
 	font-weight: var(--font-semi-bold);
 	border-radius: 1rem;
@@ -228,7 +229,7 @@ html {
 			height: auto;
 			border-radius: 50%;
 			border: 2px solid white;
-			padding: 2px; /* Opcional: agrega un poco de espacio entre el borde y la imagen */
+			padding: 2px;
 			box-sizing: border-box;
 		}
 
@@ -513,13 +514,10 @@ html {
 			row-gap: var(--mr-2);
 			.home__social-link {
 				color: #ffffff;
-				/* color: var(--primary-color); */
 				font-size: 2rem;
 				transition: color 0.3s;
 				text-align: center;
 				&:hover {
-					/* translate: 10px -50px; */
-					/* color: var(--primary-color); */
 					color: #0004ff;
 				}
 			}
@@ -605,13 +603,12 @@ html {
 				width: 100%;
 
 				.skills__cards-container {
-					background-color: var(--primary-color);
-					/* background-color: #000000; */
+					background-color: #000000;
 					height: 100px;
 					padding: 20px;
 					border-radius: 1rem;
 					border-style: solid;
-					border-color: #ffffff;
+					border-color: white;
 					border-width: 2px;
 					text-align: center;
 					width: inherit;
@@ -634,7 +631,7 @@ html {
 						}
 					}
 					.skills__card-container {
-						color: var(--bg-color-section2);
+						color: var(--secundary-color);
 						height: 300px;
 						overflow: hidden;
 					}
@@ -651,6 +648,7 @@ html {
 		.skills__tags {
 			flex-direction: column;
 			margin-top: var(--mr-4);
+
 			.skills__tags-container {
 				flex-wrap: wrap;
 				gap: 1rem;
@@ -660,9 +658,11 @@ html {
 				padding: 0.75rem 1.5rem;
 				font-weight: var(--font-semi-bold);
 				font-size: var(--small-font-size);
-				background-color: var(--primary-color);
-				color: var(--bg-color-section2);
-				border-radius: 5px;
+				background-color: black;
+				color: var(--secundary-color);
+				border-style: solid;
+				border-color: #ffffff;
+				border-width: 2px;
 			}
 		}
 	}
@@ -716,6 +716,64 @@ html {
 		opacity: 1;
 		translate: 0 0;
 	}
+}
+
+.projects__carousel-container {
+	position: relative;
+	width: 100%; /* El carrusel ocupa todo el ancho del contenedor del proyecto */
+	height: auto; /* El carrusel se ajusta a la altura de las imágenes */
+	overflow: hidden;
+}
+
+.projects__carousel {
+	display: flex;
+	transition: transform 0.5s ease-in-out;
+}
+
+.projects__carousel-slide {
+	min-width: 100%;
+	box-sizing: border-box;
+}
+
+.projects__card--img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.projects__carousel-controls {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transform: translateY(-50%);
+}
+
+.projects__carousel-button {
+	background-color: rgba(0, 0, 0, 0.7);
+	color: #fff;
+	border: none;
+	padding: 0.75rem 1.25rem;
+	cursor: pointer;
+	font-size: 1.25rem;
+	transition: background-color 0.3s ease;
+}
+
+.projects__carousel-button:hover {
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.projects__carousel-prev {
+	border-radius: 0 10px 10px 0;
+}
+
+.projects__carousel-next {
+	border-radius: 10px 0 0 10px;
 }
 
 /* ============= Contact ============= */
@@ -885,7 +943,7 @@ html {
 		}
 	}
 
-	.about {
+	/* .about {
 		.about__container {
 			.about__cards {
 				flex-direction: row;
@@ -920,6 +978,73 @@ html {
 				}
 			}
 		}
+	} */
+
+	.about {
+		background-color: var(--bg-color-section2);
+		overflow: hidden;
+	}
+
+	.about__container {
+		.about__description {
+			text-align: center;
+			padding-top: 0rem; /* Reducir el padding superior */
+			padding-bottom: 0rem; /* Reducir el padding inferior */
+		}
+	}
+
+	.about__carousel-container {
+		position: relative;
+		width: 90%; /* Ajustado el ancho */
+		max-width: 400px; /* Ancho máximo para evitar que sea demasiado grande */
+		margin: 0rem auto; /* Centrado horizontal */
+		overflow: hidden;
+	}
+
+	.about__carousel {
+		display: flex;
+		transition: transform 0.5s ease-in-out;
+	}
+
+	.about__carousel-slide {
+		min-width: 100%;
+		box-sizing: border-box;
+	}
+
+	.about__card--img {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		border-radius: 10px; /* Bordes redondeados */
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sutil sombra */
+	}
+
+	.about__carousel-controls {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		transform: translateY(-50%);
+	}
+
+	.about__carousel-button {
+		background-color: rgba(0, 0, 0, 0.5);
+		color: #fff;
+		border: none;
+		padding: 1rem;
+		cursor: pointer;
+		font-size: 1.5rem;
+	}
+
+	.about__carousel-prev {
+		border-radius: 0 5px 5px 0;
+	}
+
+	.about__carousel-next {
+		border-radius: 5px 0 0 5px;
 	}
 
 	.skills {

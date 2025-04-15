@@ -33,7 +33,8 @@
 </head>
 
 <body>
-  <!-- Loader -->
+
+  <!-- Loader ---------------------------------------------------------------------------------------->
   <div class="loader flex--container">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 237 268" class="loader__logo">
       <path fill="currentColor"
@@ -41,11 +42,12 @@
       </path>
     </svg>
   </div>
-  <!-- header -->
+
+  <!-- header ---------------------------------------------------------------------------------------->
   <header class="header">
     <nav class="navbar grid--container flex--container">
       <a class="navbar__logo flex--container" href="#"><img class="logo" src="assets/img/icon.png" alt="Logo">
-        RagDeveloper</a>
+        EdgarGFC</a>
 
       <div id="nav" class="navbar__menu">
         <a href="#close"><i class="bx bx-x btn__close navbar__icon flex--container"></i></a>
@@ -84,21 +86,15 @@
       <a href="#nav"><i class="bx bx-menu btn__open navbar__icon"></i></a>
     </nav>
   </header>
-  <!-- main -->
+
+  <!-- main ------------------------------------------------------------------------------------------>
   <main>
+    <!-- HOME -->
     <section id="home" class="home">
 
       <i class="bx bxl-javascript home__layer home__layer--2" data-speed="5"></i>
       <i class="bx bxl-css3 home__layer home__layer--3" data-speed="2"></i>
       <i class="bx bxl-html5 home__layer home__layer--1" data-speed="6"></i>
-      <!-- <i class="bx bxl-nodejs home__layer home__layer--4" data-speed="6"></i>
-      <i class="bx bxl-react home__layer home__layer--5" data-speed="8"></i>
-      <i class="bx bxl-tailwind-css home__layer home__layer--6" data-speed="-2"></i>
-      <i class="bx bxl-redux home__layer home__layer--7" data-speed="4"></i>
-      <i class="bx bxl-typescript home__layer home__layer--8" data-speed="-2"></i>
-      <i class="bx bxl-git home__layer home__layer--9" data-speed="6"></i>
-      <i class="bx bxl-graphql home__layer home__layer--10" data-speed="-7"></i>
-      <i class="bx bx-code-alt home__layer home__layer--11" data-speed="-5"></i> -->
       <div class="home__container grid--container">
         <div class="home__image">
           <img src="assets/img/profile.png" alt="profile photo" title="Edgar Flores" />
@@ -144,6 +140,8 @@
         </div>
       </div>
     </section>
+
+    <!-- ABOUT ME -->
     <section id="about" class="about section">
       <h2 class="section__title">Acerca de mí</h2>
 
@@ -155,26 +153,36 @@
           mejorar, tanto en el ámbito técnico como en el personal. Trabajo en equipo de manera efectiva y me comprometo
           con la ética, la transparencia y la honestidad en cada tarea que realizo.
         </p>
-
-        <div class="about__cards flex--container">
-          <!--Card 1 -->
-          <div class="about__card">
-            <img class="about__card--img" src="assets/img/me_1.jpg" alt="Laborando como ingeniero"
-              title="Laborando como ingeniero" />
+        <!-- carousel -->
+        <div class="about__carousel-container">
+          <div class="about__carousel">
+            <div class="about__carousel-slide">
+              <img class="about__card--img" src="assets/img/me_1.jpg" alt="Laborando como ingeniero"
+                title="Laborando como ingeniero" />
+            </div>
+            <div class="about__carousel-slide">
+              <img class="about__card--img" src="assets/img/me_2.jpg" alt="Laborando como diseñador"
+                title="Laborando como diseñador" />
+            </div>
+            <div class="about__carousel-slide">
+              <img class="about__card--img" src="assets/img/me_3.jpg" alt="Trabajando en equipo"
+                title="Trabajando en equipo" />
+            </div>
+            <div class="about__carousel-slide">
+              <img class="about__card--img" src="assets/img/me_4.png" alt="Trabajando como desarrollador"
+                title="Trabajando en equipo" />
+            </div>
           </div>
-          <!--Card 2 -->
-          <div class="about__card">
-            <img class="about__card--img" src="assets/img/me_2.jpg" alt="Laborando como diseñador"
-              title="Laborando como diseñador" />
-          </div>
-          <!--Card 3 -->
-          <div class="about__card">
-            <img class="about__card--img" src="assets/img/me_3.jpg" alt="Trabajando en equipo"
-              title="Trabajando en equipo" />
+          <div class="about__carousel-controls">
+            <button class="about__carousel-button about__carousel-prev">&#9664;</button>
+            <button class="about__carousel-button about__carousel-next">&#9654;</button>
           </div>
         </div>
+        <!-- end carousel -->
       </div>
     </section>
+
+    <!-- SKILLS -->
     <section id="skills" class="skills section">
       <h2 class="section__title">Habilidades</h2>
 
@@ -268,21 +276,43 @@
         </div>
       </div>
     </section>
+
+    <!-- PROJECTS -->
     <section id="projects" class="projects section">
       <h2 class="section__title">Proyectos</h2>
-
       <div class="projects__container grid--container">
         <div class="projects__project">
           <div class="projects__inner grid--container">
             <div class="projects__image">
-              <img src="assets/img/project1.jpg" alt="project 1" title="Ecommerce Vanilla" />
+              <div class="projects__carousel-container">
+                <div class="projects__carousel">
+                  <div class="projects__carousel-slide">
+                    <img class="projects__card--img" src="assets/img/project1.jpg" alt="Proyecto 1" />
+                  </div>
+                  <div class="projects__carousel-slide">
+                    <img class="projects__card--img" src="assets/img/project2.png" alt="Proyecto 2" />
+                  </div>
+                  <div class="projects__carousel-slide">
+                    <img class="projects__card--img" src="assets/img/project3.jpg" alt="Proyecto 3" />
+                  </div>
+                  <div class="projects__carousel-slide">
+                    <img class="projects__card--img" src="assets/img/project4.png" alt="Proyecto 4" />
+                  </div>
+                </div>
+                <div class="projects__carousel-controls">
+                  <button class="projects__carousel-button projects__carousel-prev">&#9664;</button>
+                  <button class="projects__carousel-button projects__carousel-next">&#9654;</button>
+                </div>
+              </div>
             </div>
 
             <div class="projects__info">
               <h3 class="projects__name">Proyecto 1: Plataforma Educativa (HTML, CSS3, JavaScript)</h3>
               <p class="projects__description">
-                Desarrollé una plataforma interactiva para cursos en línea utilizando HTML para la estructura, CSS3 para
-                un diseño responsive y atractivo, y JavaScript para funcionalidades como evaluaciones dinámicas, manejo
+                Desarrollé una plataforma interactiva para cursos en línea utilizando HTML para la estructura, CSS3
+                para
+                un diseño responsive y atractivo, y JavaScript para funcionalidades como evaluaciones dinámicas,
+                manejo
                 de usuarios y notificaciones en tiempo real.
               </p>
 
@@ -301,14 +331,33 @@
         <div class="projects__project">
           <div class="projects__inner grid--container">
             <div class="projects__image">
-              <img src="assets/img/project2.png" alt="project 1" title="Consumiendo API Pokemon con React" />
+              <div class="projects__carousel-container">
+                <div class="projects__carousel">
+                  <div class="projects__carousel-slide">
+                    <img class="projects__card--img" src="assets/img/project1.jpg" alt="Proyecto 1" />
+                  </div>
+                  <div class="projects__carousel-slide">
+                    <img class="projects__card--img" src="assets/img/project2.png" alt="Proyecto 2" />
+                  </div>
+                  <div class="projects__carousel-slide">
+                    <img class="projects__card--img" src="assets/img/project3.jpg" alt="Proyecto 3" />
+                  </div>
+                  <div class="projects__carousel-slide">
+                    <img class="projects__card--img" src="assets/img/project4.png" alt="Proyecto 4" />
+                  </div>
+                </div>
+                <div class="projects__carousel-controls">
+                  <button class="projects__carousel-button projects__carousel-prev">&#9664;</button>
+                  <button class="projects__carousel-button projects__carousel-next">&#9654;</button>
+                </div>
+              </div>
             </div>
-
             <div class="projects__info">
               <h3 class="projects__name">Proyecto 2: Tienda en Línea (React, JavaScript)</h3>
               <p class="projects__description">
                 Implementé una tienda en línea completamente funcional con React, creando una interfaz modular y
-                optimizada para la experiencia del usuario. Incluí manejo de carrito de compras, filtrado de productos y
+                optimizada para la experiencia del usuario. Incluí manejo de carrito de compras, filtrado de
+                productos y
                 autenticación de usuarios, utilizando JavaScript para el manejo de API y React hooks para la gestión
                 eficiente del estado.
               </p>
@@ -328,14 +377,34 @@
         <div class="projects__project">
           <div class="projects__inner grid--container">
             <div class="projects__image">
-              <img src="assets/img/project3.jpg" alt="project 1" title="CRUD con React" />
+              <div class="projects__carousel-container">
+                <div class="projects__carousel">
+                  <div class="projects__carousel-slide">
+                    <img class="projects__card--img" src="assets/img/project1.jpg" alt="Proyecto 1" />
+                  </div>
+                  <div class="projects__carousel-slide">
+                    <img class="projects__card--img" src="assets/img/project2.png" alt="Proyecto 2" />
+                  </div>
+                  <div class="projects__carousel-slide">
+                    <img class="projects__card--img" src="assets/img/project3.jpg" alt="Proyecto 3" />
+                  </div>
+                  <div class="projects__carousel-slide">
+                    <img class="projects__card--img" src="assets/img/project4.png" alt="Proyecto 4" />
+                  </div>
+                </div>
+                <div class="projects__carousel-controls">
+                  <button class="projects__carousel-button projects__carousel-prev">&#9664;</button>
+                  <button class="projects__carousel-button projects__carousel-next">&#9654;</button>
+                </div>
+              </div>
             </div>
-
             <div class="projects__info">
               <h3 class="projects__name">Proyecto 3: Dashboard de Análisis de Datos (React, CSS3, JavaScript) </h3>
               <p class="projects__description">
-                Desarrollé un panel de control interactivo para visualizar datos de ventas en tiempo real. Utilicé React
-                para crear gráficos dinámicos y tablas actualizables, con JavaScript para integrar APIs externas y CSS3
+                Desarrollé un panel de control interactivo para visualizar datos de ventas en tiempo real. Utilicé
+                React
+                para crear gráficos dinámicos y tablas actualizables, con JavaScript para integrar APIs externas y
+                CSS3
                 para asegurar un diseño intuitivo y adaptado a diferentes dispositivos.
               </p>
 
@@ -354,30 +423,38 @@
         <div class="projects__project">
           <div class="projects__inner grid--container">
             <div class="projects__image">
-              <img src="assets/img/project4.png" alt="project 1" title="Aplicación del tiempo con React" />
+              <div class="projects__carousel-container">
+                <div class="projects__carousel">
+                  <div class="projects__carousel-slide">
+                    <img class="projects__card--img" src="assets/img/project1.jpg" alt="Proyecto 1" />
+                  </div>
+                  <div class="projects__carousel-slide">
+                    <img class="projects__card--img" src="assets/img/project2.png" alt="Proyecto 2" />
+                  </div>
+                  <div class="projects__carousel-slide">
+                    <img class="projects__card--img" src="assets/img/project3.jpg" alt="Proyecto 3" />
+                  </div>
+                  <div class="projects__carousel-slide">
+                    <img class="projects__card--img" src="assets/img/project4.png" alt="Proyecto 4" />
+                  </div>
+                </div>
+                <div class="projects__carousel-controls">
+                  <button class="projects__carousel-button projects__carousel-prev">&#9664;</button>
+                  <button class="projects__carousel-button projects__carousel-next">&#9654;</button>
+                </div>
+              </div>
             </div>
-
             <div class="projects__info">
               <h3 class="projects__name">Proyecto 4: Blog Personal (HTML, CSS3, JavaScript)</h3>
               <p class="projects__description">
-                Creé un blog personal desde cero, utilizando HTML para la estructura, CSS3 para un diseño minimalista y
-                responsive, y JavaScript para funcionalidades como comentarios en tiempo real y un sistema de búsqueda
-                avanzado. El enfoque principal fue la accesibilidad y la usabilidad en dispositivos móviles.
-              </p>
+                Creé un blog personal desde cero, utilizando HTML para la estructura, CSS3 para un diseño
+                minimalista y
+                responsive, y JavaScript para funcionalidades como comentarios en tiempo real y un sistema de
+                búsqueda
 
-              <div class="projects__buttons">
-                <button class="btn" type="button">
-                  VER DEMO
-                </button>
-                <button class="btn" type="button">
-                  VER CÓDIGO
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
+
+    <!-- CONTACT -->
     <section id="contact" class="contact section">
       <h2 class="section__title">Contacto</h2>
 
@@ -463,7 +540,8 @@
       </div>
     </section>
   </main>
-  <!-- footer -->
+
+  <!-- footer ---------------------------------------------------------------------------------------->
   <footer class="footer section">
     <div class="footer__container grid--container">
       <div class="footer__info">
