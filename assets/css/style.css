@@ -112,6 +112,7 @@ html {
 	align-items: center;
 }
 .btn {
+	position: relative;
 	display: inline-block;
 	padding: 0.75rem 1.5rem; /* COMPACTO como "Ver Demo" */
 	font-size: 1rem;
@@ -121,14 +122,39 @@ html {
 	background-color: #000000;
 	color: #ffffff;
 	cursor: pointer;
+	overflow: hidden;
 	transition: all 0.3s ease-in-out;
 	margin-top: 0;
 	margin-bottom: 0;
 }
 
+.btn::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	background: linear-gradient(
+		120deg,
+		transparent,
+		rgba(255, 255, 255, 0.3),
+		transparent
+	);
+	transform: translateX(-100%) rotate(25deg);
+	opacity: 0;
+	transition: opacity 0.2s, transform 0.5s;
+	pointer-events: none;
+}
+
 .btn:hover {
 	box-shadow: 1px 7px 15px rgb(0, 0, 255);
 	transform: translateY(-4px);
+}
+
+.btn:hover::before {
+	transform: translateX(100%) rotate(25deg);
+	opacity: 1;
 }
 
 ::-webkit-scrollbar {
@@ -749,9 +775,10 @@ html {
 .footer {
 	background-color: #000000;
 	color: #efefef;
-	padding-bottom: 2rem;
+	padding-top: 1rem; /* Reducido el padding superior */
+	padding-bottom: 1rem;
 	.footer__container {
-		gap: 2rem;
+		gap: 1rem;
 		.footer__info {
 			.footer__title {
 				font-size: 1.5rem;
@@ -774,10 +801,10 @@ html {
 				}
 				.footer__social-link {
 					text-align: center;
-					margin-top: 2rem;
+					margin-top: 1rem;
 					margin-bottom: 0;
 					border-top: 1px solid #222;
-					padding-top: 2rem;
+					padding-top: 1rem;
 				}
 			}
 		}
@@ -785,7 +812,7 @@ html {
 	.footer__copy {
 		text-align: center;
 		border-top: 1px solid #222;
-		padding-top: 2rem;
+		padding-top: 1rem;
 	}
 }
 
