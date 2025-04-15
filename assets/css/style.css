@@ -719,6 +719,7 @@ html {
 }
 
 .projects__carousel-container {
+	margin-top: 2.5rem;
 	position: relative;
 	width: 100%; /* El carrusel ocupa todo el ancho del contenedor del proyecto */
 	height: auto; /* El carrusel se ajusta a la altura de las imágenes */
