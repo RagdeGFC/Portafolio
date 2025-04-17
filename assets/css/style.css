@@ -909,14 +909,71 @@ html {
 		.home__container {
 			grid-template-columns: repeat(2, 1fr);
 			grid-auto-rows: auto;
-
+			/* desde aqui */
 			.home__image {
 				width: clamp(min(375px, 100%), 48vw, 500px);
 				grid-column: 2 / 3;
 				grid-row: 1 / 4;
 				transform: translateY(3.3rem);
+				overflow: hidden; /* Asegurar que el carrusel no se desborde */
+			}
+			/* Desde aqui */
+			.home__image {
+				width: clamp(min(375px, 100%), 48vw, 500px);
+				grid-column: 2 / 3;
+				grid-row: 1 / 4;
+				transform: translateY(3.3rem);
+				overflow: hidden;
 			}
 
+			.home__carousel-container {
+				width: 100%;
+				height: 100%;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.home__carousel {
+				display: flex;
+				width: 100%;
+				height: 100%;
+				transition: transform 0.5s ease-in-out;
+				backface-visibility: hidden;
+				will-change: transform;
+				transform: translateZ(0);
+			}
+
+			.home__carousel-slide {
+				flex: 0 0 100%;
+				width: 100%;
+				height: 100%;
+				box-sizing: border-box;
+			}
+
+			.home__card--img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.home__carousel-controls {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				right: 0;
+				display: flex;
+				justify-content: space-between;
+				transform: translateY(-50%);
+			}
+
+			.home__carousel-button {
+				background-color: rgba(255, 255, 255, 0.5);
+				border: none;
+				font-size: 2rem;
+				padding: 0.5rem;
+				cursor: pointer;
+			}
+			/* hasta aqui */
 			.home__social {
 				position: relative;
 				top: 0;

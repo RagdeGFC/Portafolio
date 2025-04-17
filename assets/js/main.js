@@ -18,7 +18,7 @@ changeLang();
 darkModeHandler();
 
 const aboutCarousels = document.querySelectorAll(
-	'.about__carousel-container, .projects__carousel-container',
+	'.about__carousel-container, .projects__carousel-container, .home__carousel-container',
 );
 aboutCarousels.forEach((carouselContainer) => {
 	new AboutCarousel(carouselContainer);
