@@ -603,6 +603,8 @@ html {
 				width: 100%;
 
 				.skills__cards-container {
+					position: relative;
+					overflow: hidden;
 					background-color: #000000;
 					height: 100px;
 					padding: 20px;
@@ -612,14 +614,42 @@ html {
 					border-width: 2px;
 					text-align: center;
 					width: inherit;
-					transition: 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
-					overflow: hidden;
+					transition: all 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+					&::before {
+						content: '';
+						position: absolute;
+						top: 0;
+						left: -100%;
+						width: 100%;
+						height: 100%;
+						background: linear-gradient(
+							120deg,
+							transparent,
+							rgba(255, 255, 255, 0.3),
+							transparent
+						);
+						transition: 0.5s;
+						z-index: 1;
+					}
+
+					&:hover::before {
+						left: 100%;
+					}
+
+					&:hover {
+						box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+						border: 2px solid rgba(255, 255, 255, 0.9);
+						transform: scale(1.02);
+					}
 
 					.skills__cards-title {
 						list-style: none;
 						cursor: pointer;
 						height: 100%;
 						align-items: start;
+						position: relative;
+						z-index: 2;
 
 						.bx {
 							width: 50px;
@@ -630,7 +660,10 @@ html {
 							padding: 8px;
 						}
 					}
+
 					.skills__card-container {
+						position: relative;
+						z-index: 2;
 						color: var(--secundary-color);
 						height: 300px;
 						overflow: hidden;
@@ -638,8 +671,16 @@ html {
 
 					&[open] {
 						height: 400px;
+						box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+						border: 3px solid rgba(255, 255, 255, 1);
+						transform: scale(1.02);
+
 						.skills__cards-title {
 							height: auto;
+						}
+
+						&::before {
+							left: 100%;
 						}
 					}
 				}
@@ -756,25 +797,49 @@ html {
 }
 
 .projects__carousel-button {
-	background-color: rgba(0, 0, 0, 0.7);
+	position: relative;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.5);
 	color: #fff;
 	border: none;
-	padding: 0.75rem 1.25rem;
+	padding: 1rem;
 	cursor: pointer;
-	font-size: 1.25rem;
-	transition: background-color 0.3s ease;
+	font-size: 1.5rem;
+	transition: all 0.3s ease;
+}
+
+.projects__carousel-button::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		120deg,
+		transparent,
+		rgba(255, 255, 255, 0.3),
+		transparent
+	);
+	transition: 0.5s;
+}
+
+.projects__carousel-button:hover::before {
+	left: 100%;
 }
 
 .projects__carousel-button:hover {
-	background-color: rgba(0, 0, 0, 0.9);
+	box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+	border: 2px solid rgba(255, 255, 255, 0.9);
+	transform: scale(1.05);
 }
 
 .projects__carousel-prev {
-	border-radius: 0 10px 10px 0;
+	border-radius: 0 5px 5px 0;
 }
 
 .projects__carousel-next {
-	border-radius: 10px 0 0 10px;
+	border-radius: 5px 0 0 5px;
 }
 
 /* ============= Contact ============= */
@@ -1089,12 +1154,40 @@ html {
 	}
 
 	.about__carousel-button {
+		position: relative;
+		overflow: hidden;
 		background-color: rgba(0, 0, 0, 0.5);
 		color: #fff;
 		border: none;
 		padding: 1rem;
 		cursor: pointer;
 		font-size: 1.5rem;
+	}
+
+	.about__carousel-button::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(
+			120deg,
+			transparent,
+			rgba(255, 255, 255, 0.3),
+			transparent
+		);
+		transition: 0.5s;
+	}
+
+	.about__carousel-button:hover::before {
+		left: 100%;
+	}
+
+	.about__carousel-button:hover {
+		box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+		border: 2px solid rgba(255, 255, 255, 0.9);
+		transform: scale(1.05);
 	}
 
 	.about__carousel-prev {
