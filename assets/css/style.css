@@ -297,7 +297,7 @@ html:has([name='color-scheme']) .btn:hover {
 						font-weight: var(--font-semi-bold);
 						transition: color 0.3s;
 
-						&:hover {
+						&:hover:not(.active) {
 							color: #0400ff;
 						}
 					}
@@ -330,8 +330,8 @@ html:has([name='color-scheme']) .btn:hover {
 			/* darkmode toggle */
 			.navbar__toggle--darkmode {
 				.navbar__toggle--darkmode-label {
-					width: 48px;
-					height: 24px;
+					width: 50px;
+					height: 25px;
 					position: relative;
 					display: block;
 					background: var(--bg-color-section2);
@@ -339,7 +339,7 @@ html:has([name='color-scheme']) .btn:hover {
 					box-shadow: inset 0px 2px 5px #00000066, inset 0px -2px 5px #ffffff66;
 					cursor: pointer;
 					transition: 0.3s;
-					border: 2px solid rgba(255, 255, 255, 0.8);
+					border: 3px solid rgba(255, 255, 255, 0.8);
 
 					&::after {
 						content: '';
@@ -404,8 +404,8 @@ html:has([name='color-scheme']) .btn:hover {
 			/* language toggle */
 			.navbar__toggle--language {
 				.navbar__toggle--language-label {
-					width: 48px;
-					height: 24px;
+					width: 50px;
+					height: 25px;
 					position: relative;
 					display: block;
 					background: var(--bg-color-section2);
@@ -413,7 +413,7 @@ html:has([name='color-scheme']) .btn:hover {
 					box-shadow: inset 0px 2px 5px #00000066, inset 0px -2px 5px #ffffff66;
 					cursor: pointer;
 					transition: 0.3s;
-					border: 2px solid rgba(255, 255, 255, 0.8);
+					border: 3px solid rgba(255, 255, 255, 0.8);
 
 					&::after {
 						content: '';
@@ -461,12 +461,20 @@ html:has([name='color-scheme']) .btn:hover {
 	}
 }
 
+/* Animación para modo claro (original) */
 @keyframes animation-nav {
 	to {
 		background-color: var(--bg-color-section2);
 		backdrop-filter: blur(5px);
 		box-shadow: var(--box-shadow);
 	}
+}
+
+/* Anular la animación en modo oscuro */
+html:has([name='color-scheme']:checked) .header {
+	animation: none;
+	background-color: #000000;
+	box-shadow: var(--box-shadow);
 }
 
 /* ============= Home ============= */
@@ -1388,7 +1396,7 @@ html:has([name='color-scheme']:checked) .section__title {
 .navbar__link {
 	color: var(--title-color-light);
 
-	&:hover {
+	&:hover:not(.active) {
 		color: #0400ff;
 	}
 }
@@ -1399,7 +1407,7 @@ html:has([name='color-scheme']:checked) .section__title {
 	color: var(--title-color-dark) !important;
 }
 
-html:has([name='color-scheme']:checked) .navbar__link:hover {
+html:has([name='color-scheme']:checked) .navbar__link:hover:not(.active) {
 	color: #0400ff !important;
 }
 
