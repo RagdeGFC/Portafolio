@@ -1224,12 +1224,13 @@ html:has([name='color-scheme']:checked) .contact__form-input {
 			padding-bottom: 0rem; /* Reducir el padding inferior */
 		}
 	}
+	/* ------------------------------------------------------------------------- */
 
 	.about__carousel-container {
 		aspect-ratio: 1080/1352;
 		position: relative;
 		width: 100%; /* Ajustado el ancho */
-		max-width: 450px; /* Ancho máximo para evitar que sea demasiado grande */
+		max-width: 400px; /* Ancho máximo para evitar que sea demasiado grande */
 		margin: 0rem auto; /* Centrado horizontal */
 		overflow: hidden;
 	}
@@ -1237,6 +1238,7 @@ html:has([name='color-scheme']:checked) .contact__form-input {
 	.about__carousel {
 		display: flex;
 		transition: transform 0.5s ease-in-out;
+		width: 100%;
 	}
 
 	.about__carousel-slide {
@@ -1308,6 +1310,7 @@ html:has([name='color-scheme']:checked) .contact__form-input {
 		border-radius: 5px 0 0 5px;
 	}
 
+	/* ------------------------------------------------------------------------- */
 	.skills {
 		.skills__container {
 			/* SLIDER  */
