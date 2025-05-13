@@ -547,11 +547,37 @@ html:has([name='color-scheme']:checked) .header {
 	.home__container {
 		position: relative;
 		row-gap: 2rem;
-		padding: var(--header-height) 0 3rem;
+		padding: var(--header-height) 0 0rem;
+		/* min-height: 100vh; */
+		/* display: grid; */
+		/* align-items: center; */
 		.home__image {
 			width: clamp(min(320px, 100%), 85vw, 445px);
-			height: auto;
+			height: 100%;
 			margin: 0 auto;
+			overflow: hidden;
+		}
+		.home__carousel-container {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+		}
+		.home__carousel {
+			display: flex;
+			width: 100%;
+			height: 100%;
+			transition: transform 0.5s ease-in-out;
+		}
+		.home__carousel-slide {
+			flex: 0 0 100%;
+			width: 100%;
+			height: 100%;
+		}
+		.home__card--img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 		.home__social {
 			position: absolute;
@@ -631,6 +657,44 @@ html:has([name='color-scheme']:checked) .header {
 				}
 			}
 		}
+	}
+	.about__carousel-container {
+		aspect-ratio: 850/572; /* Ajustado al nuevo ratio de las imágenes */
+		position: relative;
+		width: 100%;
+		max-width: 720px; /* Ajustado al nuevo ancho máximo */
+		margin: 0 auto;
+		overflow: hidden;
+	}
+
+	.about__carousel {
+		display: flex;
+		transition: transform 0.5s ease-in-out;
+		width: 100%;
+	}
+
+	.about__carousel-slide {
+		min-width: 100%;
+		box-sizing: border-box;
+	}
+
+	.about__card--img {
+		width: 100%;
+		height: auto; /* Permite que la altura se ajuste proporcionalmente */
+		object-fit: contain; /* Cambiado a contain para mantener la proporción */
+		border-radius: 10px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.about__carousel-controls {
+		position: absolute;
+		top: 50%;
+		left: 0.5rem; /* Ajustado el espaciado */
+		right: 0.5rem; /* Ajustado el espaciado */
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		transform: translateY(-50%);
 	}
 }
 
@@ -865,9 +929,9 @@ html:has([name='color-scheme']:checked) .header {
 
 .projects__card--img {
 	width: 100%;
-	height: 720px;
+	height: 1080px;
 	object-fit: cover;
-	aspect-ratio: 1280/720;
+	aspect-ratio: 850 / 572;
 	border-radius: 10px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -1119,72 +1183,26 @@ html:has([name='color-scheme']:checked) .contact__form-input {
 	.home {
 		.home__container {
 			grid-template-columns: repeat(2, 1fr);
-			grid-auto-rows: auto;
-			/* desde aqui */
+			align-items: center;
 			.home__image {
 				width: clamp(min(375px, 100%), 48vw, 500px);
 				grid-column: 2 / 3;
 				grid-row: 1 / 4;
-				transform: translateY(3.3rem);
-				overflow: hidden; /* Asegurar que el carrusel no se desborde */
+				height: calc(
+					100vh - var(--header-height)
+				); /* Altura ajustada al viewport menos el header */
+				margin: 0;
 			}
-			/* Desde aqui */
-			.home__image {
-				width: clamp(min(375px, 100%), 48vw, 500px);
-				grid-column: 2 / 3;
-				grid-row: 1 / 4;
-				transform: translateY(3.3rem);
-				overflow: hidden;
-			}
-
 			.home__carousel-container {
-				width: 100%;
 				height: 100%;
-				position: relative;
-				overflow: hidden;
 			}
-
-			.home__carousel {
-				display: flex;
-				width: 100%;
-				height: 100%;
-				transition: transform 0.5s ease-in-out;
-				backface-visibility: hidden;
-				will-change: transform;
-				transform: translateZ(0);
-			}
-
 			.home__carousel-slide {
-				flex: 0 0 100%;
-				width: 100%;
 				height: 100%;
-				box-sizing: border-box;
 			}
-
 			.home__card--img {
-				width: 100%;
-				height: 100%;
 				object-fit: cover;
+				height: 100%;
 			}
-
-			.home__carousel-controls {
-				position: absolute;
-				top: 50%;
-				left: 0;
-				right: 0;
-				display: flex;
-				justify-content: space-between;
-				transform: translateY(-50%);
-			}
-
-			.home__carousel-button {
-				background-color: rgba(255, 255, 255, 0.5);
-				border: none;
-				font-size: 2rem;
-				padding: 0.5rem;
-				cursor: pointer;
-			}
-			/* hasta aqui */
 			.home__social {
 				position: relative;
 				top: 0;
@@ -1368,6 +1386,12 @@ html:has([name='color-scheme']:checked) .contact__form-input {
 		.footer__container {
 			grid-template-columns: repeat(2, 1fr);
 		}
+	}
+}
+
+@media (width >= 1024px) {
+	.home__image {
+		width: clamp(min(450px, 100%), 50vw, 600px);
 	}
 }
 
