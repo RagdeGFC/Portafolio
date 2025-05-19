@@ -696,6 +696,45 @@ html:has([name='color-scheme']:checked) .header {
 		align-items: center;
 		transform: translateY(-50%);
 	}
+
+	/* Estilos consistentes para los controles */
+	.carousel__prev,
+	.carousel__next {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: rgba(255, 255, 255, 0.5);
+		cursor: pointer;
+		z-index: var(--z-tooltip);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background-color: rgba(255, 255, 255, 0.8);
+		}
+	}
+
+	.carousel__prev {
+		left: 10px;
+	}
+
+	.carousel__next {
+		right: 10px;
+	}
+
+	/* Media Query para responsivo */
+	@media screen and (max-width: 768px) {
+		.carousel__prev,
+		.carousel__next {
+			width: 35px;
+			height: 35px;
+		}
+	}
 }
 
 /* ============= skills ============= */
