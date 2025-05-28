@@ -7,6 +7,9 @@
   <meta name="author" content="Edgar Gilberto Flores Chávez">
   <meta name="description" content="Portafolio hecho con HTML, CSS & JavaScript">
   <meta name="keywords" content="Competitivo, Creativo, Comprometido, Capaz, Consciente">
+  <!-- Precargar imágenes de banderas -->
+  <link rel="preload" href="assets/img/espana.png" as="image">
+  <link rel="preload" href="assets/img/reino-unido.png" as="image">
   <!-- Fuente  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -110,25 +113,22 @@
                 <img class="home__card--img" src="assets/img/me_4.png" alt="Perfil 4" />
               </div>
               <div class="home__carousel-slide">
+                <img class="home__card--img" src="assets/img/me_5.jpg" alt="Perfil 5" />
+              </div>
+              <div class="home__carousel-slide">
+                <img class="home__card--img" src="assets/img/me_6.jpg" alt="Perfil 6" />
+              </div>
+              <div class="home__carousel-slide">
+                <img class="home__card--img" src="assets/img/me_7.jpg" alt="Perfil 7" />
+              </div>
+              <!-- Repetir las primeras imágenes para el efecto infinito -->
+              <div class="home__carousel-slide">
                 <img class="home__card--img" src="assets/img/me_1.jpg" alt="Perfil 1" />
               </div>
               <div class="home__carousel-slide">
                 <img class="home__card--img" src="assets/img/me_2.jpg" alt="Perfil 2" />
               </div>
-              <div class="home__carousel-slide">
-                <img class="home__card--img" src="assets/img/me_3.jpg" alt="Perfil 3" />
-              </div>
-              <div class="home__carousel-slide">
-                <img class="home__card--img" src="assets/img/me_4.png" alt="Perfil 4" />
-              </div>
-              <div class="home__carousel-slide">
-                <img class="home__card--img" src="assets/img/me_1.jpg" alt="Perfil 1" />
-              </div>
             </div>
-            <!-- <div class="home__carousel-controls">
-              <button class="home__carousel-button home__carousel-prev">&#9664;</button>
-              <button class="home__carousel-button home__carousel-next">&#9654;</button>
-            </div> -->
           </div>
         </div>
         <!-- FIN CAROUSEL -->
@@ -203,11 +203,20 @@
                 alt="Certificado Academlo del modulo: Desarrollo de aplicaciones web con React.js"
                 title="Certificado Academlo del modulo: Desarrollo de aplicaciones web con React.js" />
             </div>
-
+            <div class="about__carousel-slide">
+              <img class="about__card--img" src="assets/img/Node.png"
+                alt="Certificado Academlo del modulo: Desarrollo Back-End con Node.js"
+                title="Certificado Academlo del modulo: Desarrollo Back-End con Node.js" />
+            </div>
+            <div class="about__carousel-slide">
+              <img class="about__card--img" src="assets/img/Fullstack.png"
+                alt="Certificado Academlo del programa: Desarrollo Web Full Stack"
+                title="Certificado Academlo del programa: Desarrollo Web Full Stack" />
+            </div>
           </div>
           <div class="about__carousel-controls">
-            <button class="about__carousel-button about__carousel-prev">&#9664;</button>
-            <button class="about__carousel-button about__carousel-next">&#9654;</button>
+            <button class="projects__carousel-button projects__carousel-prev">&#9664;</button>
+            <button class="projects__carousel-button projects__carousel-next">&#9654;</button>
           </div>
         </div>
         <!-- end carousel -->
